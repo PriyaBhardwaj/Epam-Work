@@ -1,0 +1,26 @@
+{
+	"AWSTemplateFormatVersion" : "2010-09-09",
+
+	"Resources" : {
+		"customS3Bucket" : {
+			"Type" : "AWS::S3::Bucket",
+				"Properties" : {
+					"AccessControl" : "PublicRead",
+					"BucketName" : "demo-bucket",
+					"Tags": [
+						{"Key" : "Name",
+						 "Value": "custom-demo-bucket"
+						 },
+						{"Key" : "Purpose",
+						 "Value": "bucket-for-demo"}
+					]
+				}
+		}
+	},
+	"Outputs" : {
+	  "DomainBucketName" : {
+		"Description" : "Information about S3 DomainName",
+		"Value" : { "Fn::GetAtt" : [ "customS3Bucket", "DomainName" ] }
+	  }
+	}
+}
