@@ -1,0 +1,10 @@
+1. Make a memory utilization check script on Linux host, and if it’s lower than 1GB throw an error "Minimum of 1GB RAM is required."
+Verify exit code with help of: echo $?
+ 
+2. Create a backup script:
+it should have configurable parameters: backup directory, list of directories to backup, database name and user.
+Files should be archived using tar command and compressed. Then placed in backup directory with date tag.
+Database should be dumped and then archived using tar command and compressed. Then placed in backup directory with date tag.
+Add this script to crontab.
+Modify script so it will make separate daily and weekly backups.
+Add rotation script so it will keep only last 7 daily backups and 4 last weekly backups.
