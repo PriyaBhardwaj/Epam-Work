@@ -1,0 +1,64 @@
+
+->    Installation of docker on Ubuntu:
+
+https://phoenixnap.com/kb/install-docker-on-ubuntu-20-04
+
+->    Youtube video to be followed
+
+https://www.youtube.com/watch?v=0GgBi8yNQT4
+
+->    Upgrading to WSL2
+
+https://docs.docker.com/desktop/windows/wsl/
+
+
+->    https://docs.docker.com/engine/install/ubuntu/
+
+->    service docker start
+
+->    service docker status
+
+
+->    For Error The Windows Subsystem for Linux has been terminated 
+
+      Run in Powershell as Administrator
+
+      dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+-> CLoning the repo
+
+      git clone https://github.com/PriyaBhardwaj/Docker-Project.git
+
+->  ls
+
+-> cd Docker-Project
+ 
+-> ls
+
+-> To remove dircetory with files
+   rm -r Docker-Project/
+
+-> For Docker compose installation and creation of file
+
+  https://www.youtube.com/watch?v=HUpIoF_conA
+
+version: '2.2'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    image: php:8.0-apache
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 8000:80
+
+Docker-compose File
+
+-> docker-compose up -d
+
+
+-> docker-compose config
+
+-> https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+
+
